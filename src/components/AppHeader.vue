@@ -91,10 +91,10 @@ export default {
 
 <style scoped lang="scss">
 .header-credit {
-  background: url("../assets/img/header-credit-bg.jpg") center;
+  background: url("../assets/img/header-credit-bg.png") center;
 }
 .header-data {
-  background: url("../assets/img/header-data-bg.jpg") center;
+  background: url("../assets/img/header-data-bg.png") center;
 }
 .header {
   background-size: cover;

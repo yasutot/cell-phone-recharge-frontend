@@ -19,6 +19,7 @@ export default {
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+@import "src/assets/stylesheets/style.scss";
 
 #app {
   font-family: "Titillium Web", Arial;

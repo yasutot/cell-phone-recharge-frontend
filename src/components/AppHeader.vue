@@ -1,8 +1,8 @@
 <template>
-  <div class="header" :class="`header-${selectedType}`">
+  <div :class="`header header-${selectedType}`">
     <div class="header-top pure-g">
       <div class="pure-u-1">
-        <img id="logo" src="../assets/logo.png">
+        <img id="logo" src="../assets/img/logo.png">
       </div>
       <div id="no-balance-text" class="pure-u-1 header-text">
         <span>você está sem saldo</span>
@@ -91,10 +91,13 @@ export default {
 
 <style scoped lang="scss">
 .header-credit {
-  background: url("../assets/header-credit-bg.jpg");
+  background: url("../assets/img/header-credit-bg.jpg") center;
 }
 .header-data {
-  background: url("../assets/header-data-bg.jpg");
+  background: url("../assets/img/header-data-bg.jpg") center;
+}
+.header {
+  background-size: cover;
 }
 .header-top {
   padding: 1.5rem;
@@ -121,11 +124,5 @@ export default {
     font-size: 36px;
     line-height: 37px;
   }
-}
-.pr-05 {
-  padding-right: 0.5rem;
-}
-.pl-05 {
-  padding-left: 0.5rem;
 }
 </style>

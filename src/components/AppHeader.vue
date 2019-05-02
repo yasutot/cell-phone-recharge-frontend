@@ -11,45 +11,87 @@
         <span>recarregue agora</span>
       </div>
       <div class="pure-u-1-2">
-        <a class="card-link" href>
-          <div class="card mr-05">
-            <div class="card-header">R$15</div>
-            <div class="card-body">E ganhe R$5,00 de bônus</div>
-            <div class="card-bottom">CONTRATAR</div>
-          </div>
-        </a>
+        <div class="pr-05">
+          <AppHeaderCard v-if="selectedType" :value="this[selectedType][0]" :type="selectedType"/>
+        </div>
       </div>
       <div class="pure-u-1-2">
-        <a class="card-link" href>
-          <div class="card ml-05">
-            <div class="card-header">R$15</div>
-            <div class="card-body">E ganhe R$5,00 de bônus</div>
-            <div class="card-bottom">CONTRATAR</div>
-          </div>
-        </a>
+        <div class="pl-05">
+          <AppHeaderCard v-if="selectedType" :value="this[selectedType][1]" :type="selectedType"/>
+        </div>
       </div>
     </div>
     <div class="header-bottom pure-g">
       <div class="pure-u-1-2">
-        <a class="tab-button" href>créditos</a>
+        <AppTabButton
+          :name="'créditos'"
+          :isActive="selectedType==='credit'"
+          v-on:clicked="tabButtonClick('credit')"
+        />
       </div>
       <div class="pure-u-1-2">
-        <a class="tab-button" href>dados</a>
+        <AppTabButton
+          :name="'dados'"
+          :isActive="selectedType==='data'"
+          v-on:clicked="tabButtonClick('data')"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import AppHeaderCard from "./AppHeaderCard.vue";
+import AppTabButton from "./AppTabButton.vue";
+
 export default {
-  name: "AppHeader"
+  name: "AppHeader",
+  components: {
+    AppHeaderCard,
+    AppTabButton
+  },
+  data: () => {
+    return {
+      selectedType: "",
+      credit: [],
+      data: []
+    };
+  },
+  async mounted() {
+    await this.getCardsData("credit");
+  },
+  methods: {
+    tabButtonClick(type) {
+      if (this.selectedType === type) return;
+
+      if (this[type].length) {
+        //prevents making another call if the data was already fetched
+        this.selectedType = type;
+      } else {
+        this.getCardsData(type);
+      }
+    },
+    getCardsData(type) {
+      if (type === "credit") {
+        var url = "https://tidal-hearing.glitch.me/recarga";
+      } else {
+        var url = "https://tidal-hearing.glitch.me/dados";
+      }
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          this[type] = data;
+          this.selectedType = type;
+        })
+        .catch(error => console.error(error));
+    }
+  }
 };
 </script>
 
 <style scoped lang="scss">
 .header {
   background: url("../assets/header-credits-bg.jpg");
-  // height: 424px;
 }
 .header-top {
   padding: 1.5rem;
@@ -77,58 +119,10 @@ export default {
     line-height: 37px;
   }
 }
-div.header-bottom > div {
-  padding: 1rem 0 1rem;
-  > a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    font-family: "Titillium Web";
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 0px;
-    text-transform: uppercase;
-    color: #f2f2f2;
-  }
+.pr-05 {
+  padding-right: 0.5rem;
 }
-.card-link {
-  // height: 100px;
-  text-decoration: none;
-  // margin-right: 0.5rem;
-  height: auto;
-  .card {
-    background-color: #f2f2f2;
-    font-family: "Titillium Web";
-    box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    text-align: center;
-    .card-header {
-      font-weight: bold;
-      font-size: 36px;
-      line-height: 55px;
-      color: #2e7ce6;
-    }
-    .card-body {
-      font-size: 10px;
-      line-height: 15px;
-      color: #828282;
-      padding-bottom: 0.5rem;
-    }
-    .card-bottom {
-      font-size: 14px;
-      padding: 0.5rem;
-      color: #55361a;
-      background-color: #f2984a;
-      border-radius: 0 0 8px 8px;
-    }
-  }
-}
-.mr-05 {
-  margin-right: 0.5rem;
-}
-.ml-05 {
-  margin-left: 0.5rem;
+.pl-05 {
+  padding-left: 0.5rem;
 }
 </style>

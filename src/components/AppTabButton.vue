@@ -17,31 +17,24 @@ export default {
 
 <style scoped lang="scss">
 a {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  font-family: "Titillium Web";
-  font-style: normal;
-  font-size: 14px;
-  line-height: 3;
-  text-transform: uppercase;
-  color: #f2f2f2;
   background: transparent;
-  outline: 1px solid rgba(242, 242, 242, 0.4);
   border-top: 3px solid transparent;
+  cursor: pointer;
+  color: #f2f2f2;
+  display: inline-block;
+  font-family: "Titillium Web";
+  font-size: 14px;
+  font-style: normal;
+  height: 100%;
+  line-height: 3;
+  outline: 1px solid rgba(242, 242, 242, 0.4);
+  text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
 }
 .active {
-  font-weight: bold;
   border-top: 3px solid white;
-}
-.pt-1 {
-  padding-top: 0.5rem;
-  height: 100%;
-  display: block;
-}
-.pb-1 {
-  padding-bottom: 0.5rem;
+  font-weight: bold;
 }
 </style>

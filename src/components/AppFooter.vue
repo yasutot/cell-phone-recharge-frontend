@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="pure-g" v-if="svas.length">
       <div class="pure-u-1-2" v-for="(item, index) in svas" :key="index">
-        <div :class="index % 2 === 0 ? 'pr-05' : 'pl-05'">
+        <div :class="index % 2 === 0 ? 'pr-03' : 'pl-03'">
           <AppSva :data="item"/>
         </div>
       </div>

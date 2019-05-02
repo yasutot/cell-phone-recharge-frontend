@@ -2,13 +2,21 @@
   <div :class="`header header-${selectedType}`">
     <div class="header-top pure-g">
       <div class="pure-u-1">
-        <img id="logo" src="../assets/img/logo.png">
+        <AppIconBase id="logo" width="20" height="32" icon-name="logo">
+          <icon-logo/>
+        </AppIconBase>
+        <AppIconBase id="hapz" width="82" height="25" icon-name="hapz">
+          <icon-hapz/>
+        </AppIconBase>
       </div>
       <div id="no-balance-text" class="pure-u-1 header-text">
         <span>você está sem saldo</span>
       </div>
       <div id="recharge-now-text" class="pure-u-1 header-text">
-        <span>recarregue agora</span>
+        <span>
+          recarregue
+          <br>agora
+        </span>
       </div>
       <div class="pure-u-1-2">
         <div class="pr-05">
@@ -44,11 +52,18 @@
 import AppHeaderCard from "./AppHeaderCard.vue";
 import AppTabButton from "./AppTabButton.vue";
 
+import AppIconBase from "./AppIconBase.vue";
+import IconHapz from "./icons/IconHapz.vue";
+import IconLogo from "./icons/IconLogo.vue";
+
 export default {
   name: "AppHeader",
   components: {
     AppHeaderCard,
-    AppTabButton
+    AppTabButton,
+    AppIconBase,
+    IconHapz,
+    IconLogo
   },
   data: () => {
     return {
@@ -90,6 +105,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+#logo {
+  margin-left: 0.3rem;
+}
+#hapz {
+  margin-left: 0.2rem;
+  height: 100%;
+}
 .header-credit {
   background: url("../assets/img/header-credit-bg.png") center;
 }
@@ -103,25 +125,25 @@ export default {
   padding: 1.5rem;
 }
 .header-text > span {
+  color: #ffffff;
   font-family: "Titillium Web";
+  font-size: 14px;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 14px; /* identical to box height */
-  text-transform: uppercase;
-  color: #ffffff;
+  line-height: 14px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
 }
 #no-balance-text {
   padding-top: 1.5rem;
 }
 #recharge-now-text {
-  margin-top: 0.5rem;
   margin-bottom: 3rem;
+  margin-top: 0.5rem;
   span {
+    font-size: 36px;
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
     line-height: 37px;
   }
 }

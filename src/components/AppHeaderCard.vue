@@ -7,7 +7,7 @@
       <div
         class="card-body"
       >{{ this.type === "credit" ? `E ganhe R$ ${this.value.bonus_amount} de bônus` : "Redes sociais Ilimitadas" }}</div>
-      <div class="card-bottom">CONTRATAR</div>
+      <div class="card-bottom">contratar</div>
     </div>
   </a>
 </template>
@@ -21,32 +21,33 @@ export default {
 
 <style scoped lang="scss">
 .card-link {
-  text-decoration: none;
   height: auto;
+  text-decoration: none;
   .card {
     background-color: #f2f2f2;
-    font-family: "Titillium Web";
-    box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.25);
+    font-family: "Titillium Web";
     text-align: center;
     .card-header {
-      font-weight: bold;
-      font-size: 36px;
-      line-height: 55px;
       color: #2e7ce6;
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 55px;
     }
     .card-body {
+      color: #828282;
       font-size: 10px;
       line-height: 15px;
-      color: #828282;
       padding-bottom: 0.5rem;
     }
     .card-bottom {
-      font-size: 14px;
-      padding: 0.5rem;
-      color: #55361a;
       background-color: #f2984a;
       border-radius: 0 0 8px 8px;
+      color: #55361a;
+      font-size: 14px;
+      padding: 0.5rem;
+      text-transform: uppercase;
     }
   }
 }

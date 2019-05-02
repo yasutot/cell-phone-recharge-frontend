@@ -17,9 +17,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-.home {
-  background-color: #e5e5e5;
-}
-</style>

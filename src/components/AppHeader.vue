@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" :class="`header-${selectedType}`">
     <div class="header-top pure-g">
       <div class="pure-u-1">
         <img id="logo" src="../assets/logo.png">
@@ -58,7 +58,7 @@ export default {
     };
   },
   async mounted() {
-    await this.getCardsData("credit");
+    await this.getHeaderCardsData("credit");
   },
   methods: {
     tabButtonClick(type) {
@@ -68,10 +68,10 @@ export default {
         //prevents making another call if the data was already fetched
         this.selectedType = type;
       } else {
-        this.getCardsData(type);
+        this.getHeaderCardsData(type);
       }
     },
-    getCardsData(type) {
+    getHeaderCardsData(type) {
       if (type === "credit") {
         var url = "https://tidal-hearing.glitch.me/recarga";
       } else {
@@ -90,8 +90,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.header {
-  background: url("../assets/header-credits-bg.jpg");
+.header-credit {
+  background: url("../assets/header-credit-bg.jpg");
+}
+.header-data {
+  background: url("../assets/header-data-bg.jpg");
 }
 .header-top {
   padding: 1.5rem;

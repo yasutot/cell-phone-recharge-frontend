@@ -16,8 +16,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-a {
-  background: transparent;
+.tab-button {
+  background: rgb(0, 0, 0, 0.4);
   border-top: 3px solid transparent;
   cursor: pointer;
   color: #f2f2f2;

@@ -87,10 +87,11 @@ export default {
       }
     },
     getHeaderCardsData(type) {
+      var url = "";
       if (type === "credit") {
-        var url = "https://tidal-hearing.glitch.me/recarga";
+        url = "https://tidal-hearing.glitch.me/recarga";
       } else {
-        var url = "https://tidal-hearing.glitch.me/dados";
+        url = "https://tidal-hearing.glitch.me/dados";
       }
       fetch(url)
         .then(response => response.json())

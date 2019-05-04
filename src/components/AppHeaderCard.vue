@@ -6,7 +6,7 @@
       >{{ this.type === "credit" ? `R$${this.value.amount}` : `${this.value.gb_amount}GB` }}</div>
       <div
         class="card-body"
-      >{{ this.type === "credit" ? `E ganhe R$ ${this.value.bonus_amount} de bônus` : "Redes sociais Ilimitadas" }}</div>
+      >{{ this.type === "credit" ? `E ganhe R$${this.value.bonus_amount} de bônus` : "Redes sociais Ilimitadas" }}</div>
       <div class="card-bottom">contratar</div>
     </div>
   </a>
@@ -46,7 +46,7 @@ export default {
       border-radius: 0 0 8px 8px;
       color: #55361a;
       font-size: 14px;
-      padding: 0.5rem;
+      padding: 0.4rem;
       text-transform: uppercase;
     }
   }

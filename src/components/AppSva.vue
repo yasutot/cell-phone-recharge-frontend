@@ -42,7 +42,7 @@ export default {
   font-style: normal;
   font-weight: 500;
   height: 21px;
-  line-height: 1.2rem;
+  line-height: 1.3rem;
   margin: 0.7rem;
   padding: 0 0.7rem;
 }
@@ -58,7 +58,7 @@ export default {
 .sva-gain {
   color: #000000;
   font-family: Roboto;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0.5rem 0 0.5rem 0.5rem;
 }
 .sva-description {

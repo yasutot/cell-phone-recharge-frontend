@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="pure-g" v-if="svas.length">
       <div class="pure-u-1-2" v-for="(item, index) in svas" :key="index">
-        <div :class="index % 2 === 0 ? 'pr-03' : 'pl-03'">
+        <div :class="index % 2 === 0 ? 'pr-04' : 'pl-04'">
           <AppSva :data="item"/>
         </div>
       </div>
@@ -38,6 +38,6 @@ export default {
 
 <style scoped lang="scss">
 .footer {
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.2rem;
 }
 </style>

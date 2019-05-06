@@ -1,7 +1,7 @@
 # Cell Phone Recharge Frontend
 
 Frontend of a fictitious operator called Hapz based on https://www.figma.com/file/DgWkIKXLWANut5pVVihWbmq0/HAPZ?node-id=0%3A1
-This portal is meant to be used only on mobile devices and must be as light as possible, as the users who access it probably has low connectivity speed. So it can be fast, it uses Purecss, a lightweight CSS framework.
+This portal is meant to be used only on mobile devices and must be as light as possible, as the users who access it probably have low connectivity speed. So it can be fast, it uses Purecss, a lightweight CSS framework.
 
 Live Version(https://cell-phone-recharge.herokuapp.com/)
 
@@ -28,7 +28,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
